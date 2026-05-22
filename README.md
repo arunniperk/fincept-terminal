@@ -2,6 +2,8 @@
 
 A web-based desktop trading & investment platform with Bloomberg-terminal aesthetics and Obsidian dark theme. Built with Electron + Vite + React.
 
+![Screenshot](public/screenshot.png)
+
 ## Features
 
 | Module | Description |
