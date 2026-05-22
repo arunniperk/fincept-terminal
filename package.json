@@ -1,0 +1,60 @@
+{
+  "name": "fincept-terminal",
+  "version": "1.0.0",
+  "description": "Fincept Terminal — Desktop financial terminal with markets, portfolio, AI agents, economics & broker integration",
+  "author": "Fincept Terminal Team",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^42.2.0",
+    "electron-builder": "^26.8.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12"
+  },
+  "build": {
+    "appId": "com.fincept.terminal",
+    "productName": "Fincept Terminal",
+    "asar": true,
+    "compression": "maximum",
+    "files": [
+      "dist/**/*",
+      "main.cjs",
+      "preload.cjs"
+    ],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Fincept Terminal",
+      "runAfterFinish": true,
+      "perMachine": false
+    },
+    "directories": {
+      "output": "release"
+    }
+  }
+}
